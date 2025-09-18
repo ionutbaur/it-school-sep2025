@@ -17,6 +17,7 @@ public class Main {
         System.out.println("My house had the initial color: " + myHouse.color);
         System.out.println(myHouse.price);
 
+        System.out.println("=======================");
         myHouse.color = "Blue";
         System.out.println("I painted my house in: " + myHouse.color);
 
@@ -39,6 +40,7 @@ public class Main {
         Window nullWindow = new Window();
         myHouseWindows.add(nullWindow); // add in list
 
+        System.out.println("====================");
         System.out.println(myHouseWindows);
         System.out.println(mountainViewWindow.color);
         System.out.println(mountainViewWindow.length);
@@ -56,5 +58,44 @@ public class Main {
                 System.out.println(window.color);
             }
         }
+
+        myHouse.openWindows();
+        System.out.println("=======================");
+        System.out.println("Price before increase: " + myHouse.price);
+        myHouse.increasePrice(30);
+        System.out.println("Price after increase: " + myHouse.price);
+        myHouse.increasePrice(100);
+        System.out.println(myHouse.price);
+        System.out.println("==================");
+        //myHouse.houseLightning();
+        boolean illuminated = myHouse.isHouseIlluminated();
+        System.out.println("Is my house illuminated?: " + illuminated);
+
+        House neigboursHouse = new House();
+        System.out.println("Is neigbour house illuminated?: " + neigboursHouse.isHouseIlluminated());
+
+        // myHouse.privateMethod(); not working
+        myHouse.defaultMethod();
+        myHouse.protectedMethod();
+        myHouse.publicMethod();
+
+        myHouse.color = "Yellow";
+        House.name = "My house";
+        System.out.println("printing checkAttributes for myHouse");
+        myHouse.checkAttributes();
+
+        System.out.println("==============");
+        System.out.println("printing checkAttributes for neigboursHouse");
+        neigboursHouse.checkAttributes();
+
+        System.out.println(House.ROOF);
+        //someMethod(); doesn't work - the "main" method in this class is static (not instance related), while someMethod() is not static (is instance dependent).
+        House.staticMethod();
+        int area = House.computeArea(100, 50);
+        System.out.println(area);
+    }
+
+    void someMethod() {
+        // not static method, meaning instance method - requires an instance of this "Main" class in order to be able to invoke it
     }
 }
