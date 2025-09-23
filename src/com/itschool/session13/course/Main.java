@@ -26,25 +26,27 @@ public class Main {
 
         ArrayList<Window> myHouseWindows = new ArrayList<>();
 
-        Window seaViewWindow = new Window();
-        seaViewWindow.hasSeeView = true;
-        seaViewWindow.width = 50;
-        seaViewWindow.length = 100;
-        seaViewWindow.color = "Green";
+        Window seaViewWindow = createWindow(true,
+                false, 100, 50, "Green");
         myHouseWindows.add(seaViewWindow); // add in list
 
-        Window mountainViewWindow = new Window();
-        mountainViewWindow.color = "Red";
+        Window mountainViewWindow = createWindow(false,
+                true, 0, 0, "Red");
         myHouseWindows.add(mountainViewWindow); // add in list
 
-        Window nullWindow = new Window();
+        Window nullWindow = createWindow(false,
+                false, 0, 0, null);
         myHouseWindows.add(nullWindow); // add in list
+
+        Window negativeLengthWindow = createWindow(false,
+                false, -7, 0, null);
+        myHouseWindows.add(negativeLengthWindow);
 
         System.out.println("====================");
         System.out.println(myHouseWindows);
-        System.out.println(mountainViewWindow.color);
-        System.out.println(mountainViewWindow.length);
-        System.out.println(seaViewWindow.length);
+        System.out.println(mountainViewWindow.getColor());
+        System.out.println(mountainViewWindow.getLength());
+        System.out.println(seaViewWindow.getLength());
 
         System.out.println(myHouse);
         myHouse.windows.addAll(myHouseWindows);
@@ -52,10 +54,10 @@ public class Main {
 
         System.out.println("Printing the colors of all windows in the house");
         for (Window window : myHouse.windows) {
-            if (window.color == null) {
+            if (window.getColor() == null) {
                 System.out.println("No color");
             } else {
-                System.out.println(window.color);
+                System.out.println(window.getColor());
             }
         }
 
@@ -93,6 +95,21 @@ public class Main {
         House.staticMethod();
         int area = House.computeArea(100, 50);
         System.out.println(area);
+    }
+
+    public static Window createWindow(boolean areVedereLaMare,
+                                      boolean areVedereLaMunte,
+                                      int lungime,
+                                      int latime,
+                                      String culoare) {
+        Window window = new Window();
+        window.setHasSeeView(areVedereLaMare);
+        window.setWidth(latime);
+        window.setLength(lungime);
+        window.setColor(culoare);
+        window.setHasMountainView(areVedereLaMunte);
+
+        return window;
     }
 
     void someMethod() {

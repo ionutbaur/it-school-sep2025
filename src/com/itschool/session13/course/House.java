@@ -4,12 +4,33 @@ import java.util.ArrayList;
 
 public class House {
 
+    // breaks the Encapsulation principle - its instance fields are not private
     static String name; // default null, but once initialized in any form (instance or not), it keeps its value in memory (does not reset on each instance)
     public static final String ROOF = "tigla metalica"; //constant accessible everywhere (public)
-    String color; // not initialized, by default null
+    public String color; // not initialized, by default null
     int price = 4; // initialized with 4 (each instance will be created with 'price' as value 4)
     ArrayList<String> materials; // not initialized, by default null
-    ArrayList<Window> windows = new ArrayList<>(); // initialized with a new ArrayList (not null) - each instance will be created with 'windows' as a new empty ArrayList
+    ArrayList<Window> windows = new ArrayList<>();
+
+    // explicit constructor - no-arg constructor
+    public House() {
+        System.out.println("Instance of house constructed!");
+    }
+
+    public House(String color, int price) {
+        System.out.println("House with color and price constructed!");
+        this.color = color;
+        this.price = price;
+    }
+
+    public House(String color, int price, ArrayList<Window> windows) {
+        /*this.color = color;
+        this.price = price;*/
+        this(color, price);
+        this.windows = windows;
+    }
+
+    // initialized with a new ArrayList (not null) - each instance will be created with 'windows' as a new empty ArrayList
 
     // static - NOT instance specific, does not need an instance
     static void staticMethod() {
@@ -46,7 +67,7 @@ public class House {
         System.out.println("I opened the windows");
     }
 
-    void increasePrice(int percentage) {
+    public void increasePrice(int percentage) {
         double percent = (double) percentage / 100;
         price += price * percent;
     }
@@ -87,7 +108,7 @@ public class House {
 
     // available everywhere - across all classes in the project
     public void publicMethod() {
-
+        System.out.println("publicMethod invoked");
     }
 
     @Override
