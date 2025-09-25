@@ -1,5 +1,6 @@
 package com.itschool.session16;
 
+// parent class for all classes that extend it
 public class SuperClass {
 
     private String somePrivateStr = "private str";
@@ -26,6 +27,7 @@ public class SuperClass {
         System.out.println("Some public method from SuperClass");
     }
 
+    // even though the class is eligible for extension, a final method cannot be overridden by any of subclasses.
     public final void finalMethod() {
         System.out.println("some final method");
     }

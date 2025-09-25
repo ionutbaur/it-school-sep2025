@@ -2,7 +2,7 @@ package com.itschool.session16;
 
 import com.itschool.session16.otherpack.SubClass;
 
-// grandchild
+// child class of SubClass (meaning SubClass is super for this class), "grandchild" class of SuperClass
 public final class SubSubClass extends SubClass {
 
     public boolean someProtectedNumber = true;
