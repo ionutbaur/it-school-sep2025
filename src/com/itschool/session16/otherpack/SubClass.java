@@ -9,8 +9,11 @@ public class SubClass extends SuperClass {
 
     public String someSubClassStr = someProtectedNumber + "string from subclass";
 
+    // since the default constructor is lost in super class,
+    // we are forced to reference at least one of the custom constructors in subclasses
+    // in order to be able to construct the object
     public SubClass(String somePublicStr) {
-        super(somePublicStr);
+        super(somePublicStr); // invokes the 1-arg constructor of the super class
     }
 
     public void someLogic() {
