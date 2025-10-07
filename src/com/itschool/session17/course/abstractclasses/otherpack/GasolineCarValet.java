@@ -1,6 +1,6 @@
-package com.itschool.session17.course.otherpack;
+package com.itschool.session17.course.abstractclasses.otherpack;
 
-import com.itschool.session17.course.Valet;
+import com.itschool.session17.course.abstractclasses.Valet;
 
 public class GasolineCarValet extends Valet {
 

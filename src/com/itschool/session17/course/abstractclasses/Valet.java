@@ -1,4 +1,4 @@
-package com.itschool.session17.course;
+package com.itschool.session17.course.abstractclasses;
 
 public abstract class Valet {
 
@@ -22,5 +22,9 @@ public abstract class Valet {
         parkCar();
         washCar();
         fuelCar();
+    }
+
+    void someMethod() {
+
     }
 }

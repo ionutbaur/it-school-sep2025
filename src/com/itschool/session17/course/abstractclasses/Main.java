@@ -1,7 +1,7 @@
-package com.itschool.session17.course;
+package com.itschool.session17.course.abstractclasses;
 
-import com.itschool.session17.course.otherpack.DieselCarValet;
-import com.itschool.session17.course.otherpack.GasolineCarValet;
+import com.itschool.session17.course.abstractclasses.otherpack.DieselCarValet;
+import com.itschool.session17.course.abstractclasses.otherpack.GasolineCarValet;
 
 public class Main {
 

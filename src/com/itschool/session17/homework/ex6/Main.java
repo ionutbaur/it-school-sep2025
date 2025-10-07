@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Main {
 
+    private static class Ionutz {
+
+    }
+
     public static void main(String[] args) {
         Shape circle = new Circle(5);
         Shape square = new Square(7);
