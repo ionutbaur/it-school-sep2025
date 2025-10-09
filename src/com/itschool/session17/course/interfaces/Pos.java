@@ -1,6 +1,6 @@
 package com.itschool.session17.course.interfaces;
 
-public class Pos {
+public final class Pos {
 
     private final BankingService bankingService;
 
@@ -13,5 +13,13 @@ public class Pos {
         bankingService.pay();
         System.out.println("Transaction with success!");
         bankingService.accountDetails();
+    }
+
+    public void payDetails() {
+        bankingService.pay();
+    }
+
+    public BankingService getBankingService() {
+        return bankingService;
     }
 }

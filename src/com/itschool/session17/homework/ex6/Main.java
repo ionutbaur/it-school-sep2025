@@ -14,6 +14,8 @@ public class Main {
         Shape square = new Square(7);
         Shape rectangle = new Rectangle(10, 4);
 
+        Shape[] array = {circle, square, rectangle};
+
         List<Shape> shapeList = new ArrayList<>();
         shapeList.add(circle);
         shapeList.add(square);

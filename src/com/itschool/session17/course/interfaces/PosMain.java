@@ -13,5 +13,8 @@ public class PosMain {
         BankingService bankingService2 = new CreditCardBankingServiceImpl();
         Pos pos2 = new Pos(bankingService2);
         pos2.transaction();
+
+        pos2.payDetails();
+        pos2.getBankingService().pay();
     }
 }
