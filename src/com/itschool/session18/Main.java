@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //runtimePolymorphism();
-        compileTimePolymorphism();
+        runtimePolymorphism();
+        //compileTimePolymorphism();
     }
 
     private static void compileTimePolymorphism() {
@@ -35,14 +35,19 @@ public class Main {
         } else if (type.equals("motorcycle")) {
             vehicle = new Motorcycle();
         } else {
+            //return;
             vehicle = null;
-            System.exit(-1);
+            //System.exit(123);
         }
 
-        vehicle.start();
-        System.out.println("==============");
+        if (vehicle == null) {
+            System.out.println("Cannot operate on vehicle.");
+        } else {
+            vehicle.start();
+            System.out.println("==============");
 
-        Car car = new Car();
-        Vehicle vehicle1 = car;
+            Car car = new Car();
+            Vehicle vehicle1 = car;
+        }
     }
 }
