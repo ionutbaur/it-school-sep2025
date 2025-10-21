@@ -8,8 +8,8 @@ public class CollectionsDemo {
         //iteratorDemo();
         //listDemo();
         //hashSetDemo();
-        //linkedHashSetDemo();
-        treeSetDemo();
+        linkedHashSetDemo();
+        //treeSetDemo();
     }
 
     private static void treeSetDemo() {
@@ -29,15 +29,25 @@ public class CollectionsDemo {
     private static void linkedHashSetDemo() {
         // similar to HashSet but the elements are sorted by the insertion order (like a List, but with no duplicates)
         Set<String> names = new LinkedHashSet<>();
-        names.add("ionutz");
-        names.add("gabriel");
+        String ionutz = "ionutz";
+        String gabriel1 = "gabriel";
+        String gabriel2 = "gabriel";
+        String gabriel3 = new String("gabriel");
+
+        names.add(ionutz);
+        names.add(gabriel1);
         names.add("baur");
         names.add("cosmin");
-        names.add("gabriel");
-        names.add("gabriel");
+        names.add(gabriel2);
+        names.add(gabriel3);
 
         System.out.println(names);
         System.out.println(names.size());
+
+        System.out.println("ionutz: " + ionutz.hashCode());
+        System.out.println("gabriel1: " + gabriel1.hashCode());
+        System.out.println("gabriel2: " + gabriel2.hashCode());
+        System.out.println("gabriel3: " + gabriel3.hashCode());
     }
 
     private static void hashSetDemo() {

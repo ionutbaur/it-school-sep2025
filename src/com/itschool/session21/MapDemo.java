@@ -1,16 +1,30 @@
 package com.itschool.session21;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MapDemo {
 
     public static void main(String[] args) {
         //hashMapDemo();
         //linkedHashMap();
-        treeMap();
+        //treeMap();
+        List<String> names = List.of("ionutz", "gabriel", " baur");
+        // names.add("alina"); won't work because List.of returns an immutable map, thus it prohibits its modification of any kind
+        //System.out.println(names);
+
+        Map<Set<String>, Set<Integer>> map = new HashMap<>();
+        Set<String> stringSet = Set.of("ionutz");
+        Set<Integer> integerSet = Set.of(12);
+
+        map.put(stringSet, integerSet);
+
+        Map<Long, String> cnpMap = Map.of(
+                1234567890L, "ionutz", // entry
+                987654321L, "gabriel", //entry
+                1234567890L, "baur" // duplicate key - Map.of does not allow it and error happens.
+                // Other Maps such as HashMap allows putting duplicate keys, but it automatically removes them, keeping the most recent updated ones.
+        );
+        System.out.println(cnpMap);
     }
 
     private static void treeMap() {
