@@ -8,15 +8,15 @@ public class CollectionsDemo {
         //iteratorDemo();
         //listDemo();
         //hashSetDemo();
-        linkedHashSetDemo();
-        //treeSetDemo();
+        //linkedHashSetDemo();
+        treeSetDemo();
     }
 
     private static void treeSetDemo() {
         // a sorted Set - elements are ordered by the natural order (e.g.: alphabetical for Strings, ascending for Numbers)
         Set<String> names = new TreeSet<>();
         names.add("ionutz");
-        names.add("gabriel");
+        names.add("Gabriel");
         names.add("baur");
         names.add("cosmin");
         names.add("gabriel");

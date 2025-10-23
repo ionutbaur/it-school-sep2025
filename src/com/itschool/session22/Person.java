@@ -2,7 +2,7 @@ package com.itschool.session22;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person> {
 
     private final String name;
     private final int age;
@@ -39,8 +39,21 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "age=" + age +
+                ", name='" + name + '\'' +
                 '}';
+    }
+
+    /**
+     * implementation for {@link Comparable#compareTo(Object)} - see its javadoc
+     */
+    @Override
+    public int compareTo(Person that) { // criteria of comparing Person objects in order to sort them
+        int result = this.name.compareTo(that.name); // compare this with that - natural (ascending) order
+        if (result == 0) { // same name, then compare the ages
+            return Integer.compare(that.age, this.age); // compare that with this - reversed (descending) order
+        }
+
+        return result; // negative value: less than, positive value: greater than, 0: equal
     }
 }
