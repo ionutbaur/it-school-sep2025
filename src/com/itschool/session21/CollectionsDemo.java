@@ -5,11 +5,11 @@ import java.util.*;
 public class CollectionsDemo {
 
     public static void main(String[] args) {
-        //iteratorDemo();
+        iteratorDemo();
         //listDemo();
         //hashSetDemo();
         //linkedHashSetDemo();
-        treeSetDemo();
+        //treeSetDemo();
     }
 
     private static void treeSetDemo() {
@@ -88,16 +88,19 @@ public class CollectionsDemo {
         /*Integer integer = 5;
         list.remove(integer);*/
 
+        // iterator alternative, using functional Collection::removeIf method.
+        list.removeIf(element -> element == 5);
+
         // works, because we are removing through iterator, not directly from the list
-        Iterator<Integer> integerIterator = list.iterator();
+        /*Iterator<Integer> integerIterator = list.iterator();
         while (integerIterator.hasNext()) { // while it has elements
             if (integerIterator.next() == 5) { // if next element is 5
                 integerIterator.remove(); // remove it
             }
-        }
+        }*/
 
         // error - cannot directly remove from list while iterating through it
-        for (Integer element : list) {
+        /*for (Integer element : list) {
             if (element == 5) {
                 list.remove(element);
                 //list.set(2, 19);
@@ -111,7 +114,7 @@ public class CollectionsDemo {
                 list.remove(list.get(i));
                 //list.set(2, 19);
             }
-        }
+        }*/
         System.out.println("Final list: " + list);
     }
 }

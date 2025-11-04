@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         //sortCustomObjectsInSet();
         //genericsDemo();
-        genericClassDemo();
+        //genericClassDemo();
+        sortCustomObjectsInSet();
     }
 
     private static void genericClassDemo() {
@@ -92,9 +93,10 @@ public class Main {
     }
 
     private static void sortCustomObjectsInSet() {
-        Set<Person> people = new TreeSet<>(); // sorted type must either implement Comparable interface
-        // or use a custom Comparator, see below - TBD in functional programming paradigm
-        //Set<Person> people = new TreeSet<>(Comparator.comparing(Person::getName).thenComparing(Person::getAge, Comparator.reverseOrder()));
+        //Set<Person> people = new TreeSet<>(); // sorted type must either implement Comparable interface
+        // or use a custom Comparator, see below - functional programming paradigm
+        Set<Person> people = new TreeSet<>(Comparator.comparing(Person::getName) // sort this TreeSet by comparing the Person names first
+                .thenComparing(Person::getAge, Comparator.reverseOrder())); // then compare Person ages in reverse order if Persons have the same name
 
         Person person1 = new Person("ionutz", 34);
         Person person2 = new Person("gabriel", 50);

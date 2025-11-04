@@ -50,10 +50,10 @@ public class MainForPredefinedFunctions {
     }
 
     private static void consumerDemo() {
-        Consumer<Integer> integerConsumer = (num) -> someMethod(num);
+        Consumer<Integer> integerConsumer = integer -> someMethod(integer, "ionutz"); // can't apply method reference - not exactly all input params used
         integerConsumer.accept(10);
 
-        Consumer<Integer> integerConsumer2 = num -> anotherMethod(num);
+        Consumer<Integer> integerConsumer2 = MainForPredefinedFunctions::anotherMethod; // method reference - 'anotherMethod' respects Consumer's impl - one Integer input, void returning type
 
         consumerMethod(integerConsumer); // pass any Consumer<Integer> as param, that may reference even methods (see above)
 
@@ -66,7 +66,7 @@ public class MainForPredefinedFunctions {
         consumer.accept(5);
     }
 
-    private static void someMethod(Integer number) {
+    private static void someMethod(Integer number, String a) {
         System.out.println("The number from someMethod is: " + number);
     }
 
